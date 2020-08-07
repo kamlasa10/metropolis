@@ -1,0 +1,74 @@
+.row {
+	@include row-flex();
+}
+.page__inner {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	z-index: 30;
+	.page__content {
+		flex-grow: 1;
+	}
+	.page__footer-wrapper {
+		flex-shrink: 0;
+	}
+}
+
+.btn {
+	display: inline-flex;
+	padding: 10px 31px;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 1.3em;
+	text-transform: uppercase;
+	color: $textColor;
+	background-color: transparent;
+	border: 2px solid #CBD3E0;
+	transition: all 0.4s;
+	border-radius: 3px;
+
+	@include desktop {
+		padding: 10px 22px;
+		font-size: 10px;
+		line-height: 1.6em;
+	}
+
+	&:hover,
+	&:active {
+		opacity: 0.8;
+	}
+}
+
+.section {
+	min-height: 100vh;
+	position: relative;
+	padding-top: 50px;
+
+	&-fixed {
+		min-height: 100vh;
+		position: relative;
+		background: url('../images/fixed-bg.jpg') no-repeat center/cover;
+		background-attachment: fixed;
+	}
+
+	&-title {
+		font-size: 64px;
+		line-height: 1.4em;
+		font-weight: 600;
+		position: relative;
+		z-index: 10;
+		color: #fff;
+
+		@include desktop {
+			font-size: 48px;
+			line-height: 1.4em;
+		}
+
+		@include phones {
+			font-size: 24px;
+			line-height: 1.3em;
+		}
+	}
+}
+
+// PAGINATION

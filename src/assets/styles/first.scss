@@ -1,0 +1,184 @@
+.main {
+    padding-bottom: 50px;
+    color: #fff;
+
+    @include tablets {
+        padding-bottom: 0;
+    }
+
+    &__desc {
+        @include phones {
+            font-size: 12px;
+        }
+    }
+    
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 50%;
+        background-color: rgba(#000, .5);
+
+        @include laptop {
+            left: 30%;
+            width: 70%;
+        }
+
+        @include tablets {
+            display: none;
+        }
+    }
+
+    &__block {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        margin-top: auto;
+
+        @media (max-width: 670px) {
+            justify-content: flex-end;
+        }
+    }
+
+    .container {
+        height: 100%;
+    }
+
+    &__wrap {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    &__content {
+        max-width: 530px;
+        position: relative;
+        z-index: 1;
+
+        @include tablets {
+            max-width: 400px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        @include phones {
+            padding-top: 30px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__left,
+    &__right {
+        width: 50%;
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+
+        @include tablets {
+            justify-content: flex-end;
+            align-self: flex-end;
+            min-height: 50vh;
+            padding-bottom: 50px;
+        }
+    }
+
+    &__left {
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-top: auto;
+
+        @include laptop {
+            width: 30%;
+        }
+
+        @include tablets {
+            width: 20%;
+        }
+
+        svg {
+            width: 140px;
+            height: 98px;
+
+            @include desktop {
+                width: 90px;
+                height: 63px;
+            }
+
+            @include phones {
+                width: 50px;
+                height: 35px;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+
+        @media (max-width: 580px) {
+            font-size: 30px;
+        }
+
+        @include phones {
+            font-size: 24px;
+        }
+    }
+
+    &__socials {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        @media (max-width: 670px) {
+            position: static;
+        }
+    }
+
+    &__trigger {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: inline-flex;
+
+        @media (max-width: 670px) {
+            display: none;
+        }
+
+        svg {
+            width: 14px;
+            height: 22px;
+            fill: #fff;
+        }
+    }
+
+    &__right {
+        position: relative;
+        margin-left: 100px;
+
+        @include laptop {
+            width: 70%;
+        }
+
+        @include tablets {
+            width: 80%;
+            margin-left: 0;
+            padding-left: 20px;
+        }
+
+        &-bg {  
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(#000, .5);
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

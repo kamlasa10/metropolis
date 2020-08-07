@@ -1,0 +1,50 @@
+.footer {
+    position: absolute;
+    bottom: 40px;
+    color: #fff;
+    left: 0;
+    right: 0;
+
+    @include desktop {
+        bottom: 10px;
+    }
+
+    @include tablets {
+        bottom: 30px;
+    }
+
+    @include phones {
+        bottom: 20px;
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include phones {
+            margin-top: 30px;
+            flex-direction: column;
+            justify-content: start;
+        }
+    }
+
+    &__block {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        line-height: 1.3em;
+        text-transform: uppercase;
+
+        @include desktop {
+            font-size: 10px;
+            line-height: 1.6em;
+        }
+
+        img {
+            width: 70px;
+            height: 28px;
+            margin-left: 20px;
+        }
+    }
+}

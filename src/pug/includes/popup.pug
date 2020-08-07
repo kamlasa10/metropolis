@@ -1,0 +1,24 @@
+.overlay
+    div(class="popup popup__callback")
+        button(class="popup__close" type="button")
+            +svg('cross')
+        .popup__wrap
+            .popup__logo
+                +svg('M-logo')
+            .popup__title Зворотній зв’язок
+        form(method="post" action="#" class="popup__form" data-popup="true")
+            div(class="popup__block popup__block--user")
+                .popup__block-wrap
+                    input(type="text" placeholder="Ім’я:" class="popup__input")
+                    +svg('user')
+            div(class="popup__block popup__block--phone")
+                .popup__block-wrap
+                    input(type="text" placeholder="Телефон:" class="popup__input")
+                    +svg('phone-border')
+            .popup__box
+                button(type="submit" class="popup__btn submit__form") Надіслати повідомлення
+    .preview
+        button(class="popup__close" type="button")
+            +svg('cross')
+        img(src="" alt="большое изображение планировки")
+            

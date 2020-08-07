@@ -1,0 +1,163 @@
+.paper {
+    background: url('../images//paper-bg.jpg') no-repeat center/cover;
+    
+    &__content {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include tablets {
+            justify-content: flex-start;
+        }
+    }
+
+    .container {
+        @include phones {
+            padding: 0 10px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 60px;
+        text-align: center;
+
+        @include desktop {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        width: 100%;
+    }
+
+    &__slider {
+        display: flex;
+        width: 89%;
+
+        .slick-list {
+            padding-top: 30px;
+            padding-left: 20px;
+        }
+
+        .slick-slide {
+            display: flex;
+            margin-right: 80px;
+
+            @media (max-width: 1300px) {
+                margin-right: 50px;
+            }
+
+            @include phones {
+                margin-right: 20px;
+            }
+
+        }
+    }
+
+    &__item {
+        min-height: 425px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        border: 1px solid rgba(203, 211, 224, 0.4);
+    }
+
+    &__link {
+        transform: translateY(-30px);
+        width: 59px;
+        height: 59px; 
+        border: 1px solid rgba(203, 211, 224, 0.4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include desktop {
+            width: 40px;
+            height: 40px;
+            transform: translateY(-20px);
+        }
+
+        svg {
+            width: 21px;
+            height: 21px;
+            fill: #CBD3E0;
+
+            @include desktop {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+
+    &__text {
+        margin-top: 60px;
+        position: relative;
+        padding: 0 70px;
+        padding-left: 30px;
+
+        @include laptop {
+            padding: 0 30px;
+        }
+
+        @include tablets {
+            padding-right: 15px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: -17px;
+            width: 32px;
+            height: 1px;
+            background-color: #CAC4CD;
+        }
+    }
+
+    &__icon {
+        margin-top: auto;
+        margin-left: auto;
+
+        svg {
+            width: 190px;
+            height: 103px;
+            fill: #CBD3E0;
+
+            @include desktop {
+                width: 130px;
+                height: 71px;
+            }
+        }
+    }
+
+    &__btn {
+        &--prev {
+            margin-right: 80px;
+
+            @media (max-width: 1300px) {
+                margin-right: 35px;
+            }
+
+            @include laptop {
+                margin-right: 10px;
+            }
+
+            @include phones {
+                margin-right: 0;
+            }
+        }
+
+        &--next {
+            transform: rotate(180deg);
+
+            @include laptop {
+                transform: rotate(180deg) translateX(20px);
+            }
+        }
+    }
+}

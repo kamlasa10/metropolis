@@ -1,0 +1,225 @@
+.technical {
+    background: url("../images//technical-bg.jpg") no-repeat center/cover;
+    color: #fff;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000, .7);
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    &__heading {
+        margin-bottom: 80px;
+        text-align: center;
+
+        @include desktop {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__wrap {
+        max-width: 360px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 36px;
+        width: 33.3%;
+        padding: 0 20px;
+
+        @media (max-width: 900px) {
+            width: 50%;
+            padding: 0;
+            padding-left: 20px;
+        }
+
+        @media (max-width: 600px) {
+            width: 100%;
+            padding: 0;
+        }
+
+        img {
+            margin-right: 28px;
+            fill: none;
+            stroke: #fff;
+        }
+
+        &--1 {
+            img {
+                width: 30px;
+                height: 32px;
+
+                @include desktop {
+                    width: 19px;
+                    height: 20px;
+                }
+            }
+        }
+
+        &--2 {
+            img {
+                width: 30px;
+                height: 30px;
+
+                @include desktop {
+                    width: 19px;
+                    height: 19px;
+                }
+            }
+        }
+
+        &--3 {
+            img {
+                width: 27px;
+                height: 35px;
+
+                @include desktop {
+                    width: 22px;
+                    height: 29px;
+                }
+            }
+        }
+
+        &--4 {
+            img {
+                width: 30px;
+                height: 30px;
+
+                @include desktop {
+                    width: 19px;
+                    height: 19px;
+                }
+            }
+        }
+
+        &--5 {
+            img {
+                width: 30px;
+                height: 26px;
+
+                @include desktop {
+                    width: 24px;
+                    height: 20px;
+                }
+            }
+        }
+
+        &--6 {
+            img {
+                width: 30px;
+                height: 23px;
+
+                @include desktop {
+                    width: 23px;
+                    height: 18px;
+                }
+            }
+        }
+
+        &--7 {
+            img {
+                width: 30px;
+                height: 30px;
+
+                @include desktop {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+        }
+
+        &--8 {
+            img {
+                width: 30px;
+                height: 22px;
+
+                @include desktop {
+                    width: 26px;
+                    height: 19px;
+                }
+            }
+        }
+
+        &--9 {
+            img {
+                width: 30px;
+                height: 28px;
+
+                @include desktop {
+                    width: 26px;
+                    height: 24px;
+                }
+            }
+        }
+
+        &--10 {
+            img {
+                width: 30px;
+                height: 19px;
+
+                @include desktop {
+                    width: 28px;
+                    height: 18px;
+                }
+            }
+        }
+
+        &--11 {
+            img {
+                width: 27px;
+                height: 43px;
+
+                @include desktop {
+                    width: 20px;
+                    height: 32px;
+                }
+            }
+        }
+
+        &--12 {
+            img {
+                width: 42px;
+                height: 16px;
+
+                @include desktop {
+                    width: 33px;
+                    height: 14px;
+                }
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 5px;
+        font-size: 30px;
+        line-height: 1em;
+        font-weight: 600;
+
+        @include desktop {
+            font-size: 24px;
+            line-height: 1.6em;
+        }
+    }
+}

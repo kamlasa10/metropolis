@@ -1,0 +1,123 @@
+.about {
+    @include phones {
+        padding: 50px 0;
+    }
+
+    &__content {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 100px;
+        margin-right: 100px;
+        color: #fff;
+
+        @include laptop {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        @include phones {
+            justify-content: flex-start;
+            min-height: auto;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 150px;
+        text-align: center;
+
+        @include desktop {
+            margin-bottom: 100px;
+        }
+
+        @include tablets {
+            margin-bottom: 70px;
+        }
+
+        @include phones {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: flex-start;
+
+        @include tablets {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__left,
+    &__right {
+        width: 50%;
+
+        @include tablets {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__right {
+        display: flex;
+        justify-content: flex-end;
+
+        @include tablets {
+            margin-top: 70px;
+        }
+
+        @include phones {
+            margin-top: 20px;
+        }
+
+        svg {
+            width: 450px;
+            height: 315px;
+
+            @include desktop {
+                width: 310px;
+            }
+
+            @include tablets {
+                width: 225px;
+                height: 112px;
+            }
+
+            @include phones {
+                width: 115px;
+                height: 57px;
+            }
+        }
+    }
+
+    &__desc {
+        padding: 0 8%;
+
+        @include phones {
+            font-size: 12px;
+            line-height: 1.7em;
+            padding: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 25px;
+        font-size: 30px;
+        line-height: 1em;
+
+        @include desktop {
+            margin-bottom: 10px;
+            font-size: 24px;
+            line-height: 1.6em;
+        }
+
+        @include phones {
+            font-size: 18px;
+            line-height: 1em;
+        }
+    }
+}

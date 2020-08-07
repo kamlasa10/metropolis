@@ -1,0 +1,291 @@
+.Infrastructure {
+    position: relative;
+    display: flex;
+    padding-top: 0;
+
+    &__btn {
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        cursor: pointer;
+        transition: all 0.9s;
+
+        &--hide {
+            svg {
+                transition: all 0.9s;
+                transform: rotate(180deg);
+            }
+        }
+
+        @include tablets {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            display: block;
+        }
+
+        svg {
+            transition: all 0.9s;
+            width: 7px;
+            height: 15px;
+            fill: #000;
+        }
+    }
+
+    &__wrap {
+        width: 25%;
+
+        @include laptop {
+            width: 40%;
+            padding-right: 15px;
+        }
+
+        @include tablets {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            align-self: flex-start;
+            z-index: 10;
+            min-height: 50vh;
+        }
+
+        @media (max-width: 700px) {
+            width: 65%;
+        }
+
+        @include phones {
+            width: 80%;
+        }
+    }
+
+    &__info {
+        position: relative;
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        transition: all 1.3s;
+
+        &--hide {
+            transition: all 1.5s;
+            transform: translateX(-100vw);
+        }
+
+        @include tablets {
+            padding: 20px 20px;
+            padding-left: 5px;
+        }
+
+        @include phones {
+            padding: 20px 10px;
+        }
+    }
+
+    &__block {
+        display: flex;
+
+        svg {
+            margin-right: 20px;
+            width: 45px;
+            height: 24px;
+
+            @include desktop {
+                width: 35px;
+                height: 19px;
+            }
+        }
+    }
+
+    &__intro {
+        position: relative;
+        padding-bottom: 32px;
+        margin-bottom: 20px;
+        color: #362140;
+        font-size: 30px;
+        line-height: 1em;
+        font-weight: 600;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 32px;
+            height: 1px;
+            background-color: #362140;
+            bottom: 0;
+            left: 0;
+        }
+
+        @include desktop {
+            font-size: 24px;
+            line-height: 1.6em;
+        }
+
+        @include phones {
+            font-size: 18px;
+            line-height: 1em;
+        }
+    }
+
+    &__list {
+        margin-left: 35px;
+
+        @include laptop {
+            margin-left: 25px;
+        }
+
+        @include phones {
+            margin-left: 0;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        line-height: 2.5em;
+
+        @media (max-width: 870px) {
+            font-size: 14px;
+            line-height: 2.5em;
+        }
+
+        @include phones {
+            margin-bottom: 5px;
+            font-size: 12px;
+            line-height: 2em;
+        }
+
+        svg,
+        img {
+            margin-right: 32px;
+            fill: none;
+        }
+
+        &--1 {
+            svg {
+                width: 19px;
+                height: 15px;
+
+                @include desktop {
+                    width: 16px;
+                    height: 13px;
+                }
+            }
+        }
+
+        &--2 {
+            svg {
+                width: 17px;
+                height: 22px;
+
+                @include desktop {
+                    width: 14px;
+                    height: 19px;
+                }
+            }
+        }
+
+        &--3 {
+            img {
+                width: 16px;
+                height: 15px;
+                @include desktop {
+                    width: 13px;
+                    height: 13px;
+                }
+            }
+        }
+
+        &--4 {
+            svg {
+                width: 12px;
+                height: 14px;
+
+                @include desktop {
+                    width: 10px;
+                    height: 12px;
+                }
+            }
+        }
+
+        &--5 {
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        &--6 {
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        &--7 {
+            svg {
+                width: 10px;
+                height: 14px;
+            }
+        }
+
+        &--8 {
+            svg {
+                width: 14px;
+                height: 17px;
+            }
+        }
+
+        &--9 {
+            svg {
+                width: 14px;
+                height: 21px;
+            }
+        }
+
+        &--10 {
+           svg {
+                width: 13px;
+                height: 11px;
+           }
+        }
+    }
+
+    &__map {
+        position: relative;
+        width: 75%;
+
+        @include tablets {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        top: 150px;
+        left: 63%;
+        z-index: 10;
+        transform: translateX(-50%);
+
+        @include laptop {
+            left: 69%;
+        }
+
+        @include tablets {
+            top: 20px;
+            left: 55%;
+        }
+
+        @include phones {
+            left: 50%;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.navbar {
+    background: rgba(113, 106, 116, 0.9);
+
+    &__list {
+        margin-left: 77px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__link {
+        display: inline-flex;
+        padding: 10px 0;
+        font-size: 12px;
+        line-height: 1.3em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $textColor;
+        transition: all 0.4s;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+
+        @include desktop {
+            font-size: 10px;
+            line-height: 1.6em;
+        }
+
+        &--active {
+            color: #fff;
+            border-top: 2px solid $textColor;
+            border-bottom: 2px solid $textColor;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.logo {
+    display: flex;
+    align-items: center;
+
+    &__block {
+        position: relative;
+        padding-right: 18px;
+        margin-right: 18px;
+        font-family: $nunito;
+        line-height: 1.1em;
+        text-transform: uppercase;
+        color: #fff;
+
+        svg {
+            width: 72px;
+            height: 39px;
+            fill: #fff;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 5px;
+            width: 1px;
+            height: 67%;
+            background-color: #fff;
+        }
+
+        &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

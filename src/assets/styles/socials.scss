@@ -1,0 +1,80 @@
+.socials {
+    @media (max-width: 670px) {
+        display: flex;
+    }
+
+    &__link {
+        margin-bottom: 20px;
+        display: flex;
+        width: 40px;
+        height: 40px;
+        background-color: $textColor;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s;
+
+        @media (max-width: 670px) {
+            margin: 0;
+            margin-right: 20px;
+            width: 30px;
+            height: 30px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        svg {
+            fill: #000;
+        }
+
+        &--fb {
+           svg {
+                width: 11px;
+                height: 22px;
+
+                @media (max-width: 670px) {
+                    width: 8px;
+                    height: 16px;
+                }
+           }
+        }
+
+        &--telegram {
+            svg {
+                width: 24px;
+                height: 20px;
+
+                @media (max-width: 670px) {
+                    width: 18px;
+                    height: 15px;
+                }
+            }
+        }
+
+        &--viber {
+            svg {
+                width: 23px;
+                height: 25px;
+
+                @media (max-width: 670px) {
+                    width: 17px;
+                    height: 19px;
+                }
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:actvie {
+            opacity: 0.6;
+        }
+    }
+}

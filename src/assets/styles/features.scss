@@ -1,0 +1,139 @@
+.features {
+    background: url('../images/features-bg.jpg') no-repeat center/cover;
+    color: #CBD3E0;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
+    }
+
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__wrap {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include tablets {
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        width: 25%;
+    
+        padding: 0 20px;
+        margin-bottom: 25px;
+
+        @include desktop {
+            width: 319px;
+        }
+
+        &--1 {
+            img {
+                width: 90px;
+                height: 90px;
+
+                @include phones {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+
+        &--2 {
+            img {
+                width: 92px;
+                height: 92px;
+
+                @include phones {
+                    width: 40px;
+                    height: 4px;
+                }
+            }
+        }
+
+        &--3 {
+            img {
+                width: 93px;
+                height: 92px;
+
+                @include phones {
+                    width: 41px;
+                    height: 40px;
+                }
+            }
+        }
+
+        &--4 {
+            img {
+                width: 60px;
+                height: 96px;
+
+                @include phones {
+                    width: 30px;
+                    height: 45px;
+                }
+            }
+        }
+    }
+
+    &__list-item {
+        font-size: 12px;
+        line-height: 1.7em;
+    }
+
+    &__heading {
+        margin-bottom: 107px;
+        width: 100%;
+        text-align: center;
+
+        @include tablets {
+            margin-bottom: 40px;
+        }
+
+        @include phones {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__img {
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        font-size: 30px;
+        line-height: 1em;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #fff;
+
+        @include desktop {
+            font-size: 24px;
+            line-height: 1.6em;
+        }
+
+        @include phones {
+            font-size: 18px;
+            line-height: 1em;
+        }
+    }
+}

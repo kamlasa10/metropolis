@@ -1,0 +1,16 @@
+.play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+
+    svg {
+        width: 14px;
+        height: 14px;
+        fill: transparent;
+    }
+}

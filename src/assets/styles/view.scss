@@ -1,0 +1,255 @@
+.view {
+    padding-top: 20px;
+
+    .container {
+        @include phones {
+            padding: 0 10px;
+        }
+    }
+
+    &__inner-wrap {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 0;
+    }
+
+    &__top-wrap {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include phones {
+            justify-content: space-between;
+        }
+    }
+
+    &__top-text {
+        position: relative;
+        margin-right: 10px;
+        padding-right: 33px;
+        color: #fff;
+        font-size: 12px;
+        line-height: 1.3em;
+        text-transform: uppercase;
+
+        @include desktop {
+            font-size: 10px;
+            line-height: 1.6em;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 1px;
+            background-color: #fff;
+        }
+
+        &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+
+    }
+
+
+    &__heading {
+        margin-bottom: 60px;
+
+        @include desktop {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__top-info {
+        position: absolute;
+        right: 0;
+        top: 40%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include phones {
+            top: 36%;
+        }
+    }
+
+    .view__wrap {
+        display: flex;
+        min-width: 0;
+        width: 100%;
+    }
+
+    &__slider {
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .slick-slide {
+            min-height: 1px;
+        }
+    }
+
+    &__item {
+        min-width: 0;
+        padding-bottom: 34px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        border: 1px solid rgba(203, 211, 224, 0.4);
+        transition: all 0.4s;
+        margin-right: 80px;
+
+        @media (max-width: 1200px) {
+            margin-right: 60px;
+        }
+
+        @include laptop {
+            margin-right: 45px;
+        }
+
+        @include tablets {
+            margin-right: 25px;
+        }
+
+        @include phones {
+            margin-right: 9px;
+        }
+
+        &:hover {
+            border-color: #fff;
+
+            .view__link-icon {
+                background-color: #fff;
+                border-color: transparent;
+
+                svg {
+                    fill: #000;
+                }
+            }
+        }
+    }
+
+    &__img {
+        cursor: pointer;
+        margin: 10px;
+        margin-bottom: 40px;
+        height: 250px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @include tablets {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 650px) {
+            margin-bottom: 30px;
+            height: 200px;
+        }
+
+        @include phones {
+            height: 160px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        color: #fff;
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        padding: 0 18%;
+        font-size: 30px;
+        line-height: 1.4em;
+        text-align: center;
+
+        @include desktop {
+            font-size: 24px;
+            line-height: 1.6em;
+        }
+
+        @media (max-width: 650px) {
+            font-size: 18px;
+            line-height: 1.3em;
+        }
+    }
+
+    &__link {
+        color: $textColor;
+        display: inline-flex;
+        align-items: center;
+
+        @include phones {
+            font-size: 12px;
+            line-height: 1.7em;
+        }
+
+        &-icon {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 10px;
+            justify-content: center;
+            border: 1px solid rgba(203, 211, 224, 0.4);
+            border-radius: 50%;
+
+            @include phones {
+                width: 30px;
+                height: 30px;
+
+                svg {
+                    width: 13px;
+                    height: 13px;
+                }
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+                fill: $textColor;
+            }
+        }
+    }
+
+    &__btn {
+        @include phones {
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &--prev {
+            margin-right: 30px;
+
+            @include phones {
+                margin-right: 9px;
+            }
+        }
+
+        &--next {
+            transform: rotate(180deg);
+        }
+    }
+}

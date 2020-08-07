@@ -1,0 +1,13 @@
+.preview {
+    display: none;
+    width: 70%;
+
+    .popup__close {
+        right: 10%;
+        top: 40px;
+    }
+
+    &--show {
+        display: block;
+    }
+}

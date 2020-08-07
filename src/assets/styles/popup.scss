@@ -1,0 +1,188 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#fff, 0.9);
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    transition: all 0.6s;
+
+    &--show {
+        z-index: 101;
+        display: flex;
+        transition: all 0.4s;
+    }
+}
+
+.popup {
+    position: relative;
+    width: 420px;
+    background-color: #fff;
+    padding: 0 40px;
+    padding-bottom: 40px;
+
+    &__logo {
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        border-radius: 50%;
+        transform: translateY(-45px);
+
+        svg {
+            width: 50px;
+            height: 27px;
+            fill: #362140;
+        }
+    }
+
+    &__wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__close {
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 23px;
+        height: 23px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1px solid #716A74;
+        transition: all 0.4s;
+
+        svg {
+            width: 12px;
+            height: 12px;
+            fill: $grey;
+        }
+
+        &:hover,
+        &:active {
+            opacity: .8;
+            outline: none;
+        }
+    }
+
+    &__title {
+        font-size: 18px;
+        line-height: 1.2em;
+        font-weight: 600;
+        margin-top: -48px;
+        width: 100%;
+        text-align: center;
+        color: #362140;
+    }
+
+    &__form {
+        margin-top: 52px;
+    }
+
+    &__block {
+        position: relative;
+        margin-bottom: 40px;
+        width: 100%;
+
+        &-wrap {
+            position: relative;
+        }
+
+        svg {
+            position: absolute;
+            left: 0;
+            bottom: 14px;
+            stroke: $grey;
+            fill: none;
+        }
+
+        &--user {
+            svg {
+                width: 14px;
+                height: 15px;
+            }
+        }
+
+        &--phone {
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+
+    &__input {
+        color: $grey;
+        padding-left: 30px;
+        padding-bottom: 10px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #CAC4CD;
+        width: 100%;
+        transition: all 0.4s;
+
+        @include placeholder {
+            color: $grey;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: darken(#CAC4CD, 15%);
+
+            svg {
+                opacity: .8;
+            }
+        }
+    }
+
+    &__box {
+        text-align: right;
+    }
+
+    &__btn {
+        font-family: $nunito;
+        font-size: 10px;
+        line-height: 1.6em;
+        text-transform: uppercase;
+        color: #362140;
+        border: none;
+        background-color: transparent;
+        position: relative;
+        padding-bottom: 6px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            letter-spacing: 0.07em;
+            bottom: 0;
+            width: 22px;
+            height: 1px;
+            background-color: #362140;
+        }
+
+        &:hover {
+            color: darken(#362140, 15%);
+            outline: none;
+        }
+
+        &:active {
+            outline: none;
+        }
+    }
+}

@@ -1,0 +1,272 @@
+.contacts {
+    position: relative;
+
+    @include desktop {
+        padding-bottom: 25px;
+    }
+
+    @include tablets {
+        padding-top: 50px;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+
+        @include tablets {
+            padding-bottom: 90px;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 67px;
+
+        @include desktop {
+            margin-bottom: 38px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+
+        @include tablets {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+    &__info {
+        width: 45%;
+        margin-right: 120px;
+
+        @include desktop {
+            margin-right: 41px;
+            width: 40%;
+        }
+
+        @include tablets {
+            margin-bottom: 25px;
+            width: 100%;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @media (max-width: 680px) {
+            padding: 0;
+        }
+
+        &-wrap {
+            @include tablets {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            @media (max-width: 600px) {
+                flex-direction: column;
+            }
+        }
+
+        &-item {
+            margin-bottom: 57px;
+
+            @include tablets {
+                margin-bottom: 30px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-title {
+            margin-bottom: 35px;
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 1em;
+            color: #fff;
+    
+            @include desktop {
+                font-size: 24px;
+                line-height: 1.5em;
+            }
+
+            @include tablets {
+                margin-bottom: 10px;
+            }
+
+            @include phones {
+                font-size: 18px;
+                line-height: 1em;
+            }
+        }
+
+        &-block {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+
+            &--correct {
+                align-items: flex-start;
+            }
+        }
+
+        &-text {
+            color: $textColor;
+
+            @include phones {
+                font-size: 12px;
+                line-height: 1.7em;
+            }
+        }
+
+        &-icon {
+            margin-right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #CBD3E0;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                fill: #000;
+            }
+
+            &--map {
+                svg {
+                    width: 19px;
+                    height: 23px;
+                }
+            }
+
+            &--phone {
+               svg {
+                    width: 19px;
+                    height: 19px;
+               }
+            }
+
+            &--date {
+                svg {
+                    width: 19px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+
+    &__form {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            width: 45%;
+        }
+
+        @include tablets {
+            width: 100%;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @include phones {
+            padding: 0;
+        }
+
+        &-title {
+            margin-bottom: 40px;
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 1.4em;
+            color: #fff;
+
+            @include tablets {
+                margin-bottom: 20px;
+                max-width: 420px;
+            }
+
+            @include desktop {
+                font-size: 18px;
+                line-height: 1.3em;
+            }
+        }
+
+        &-item {
+            margin-bottom: 20px;
+            display: flex;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-icon {
+            width: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(203, 211, 224, 0.5);
+            border: 1px solid rgba(203, 211, 224, 0.4);
+
+            svg {
+                fill: #fff;
+            }
+
+            &--user {
+                svg {
+                    width: 14px;
+                    height: 15px;
+                }
+            }
+
+            &--phone {
+                svg {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+
+            &--message {
+                svg {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+        }
+
+        &-input {
+            width: 100%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            border: 1px solid rgba(203, 211, 224, 0.4);
+            padding: 10px 40px;
+            padding-right: 10px;
+            color: $textColor;
+            outline: none;
+
+            @include placeholder {
+                color: $textColor;
+            }
+        }
+
+        &-area {
+            min-height: 100px;
+            resize: none;
+        }
+    }
+
+    &__btn {
+        margin-top: 10px;
+        margin-left: auto;
+        padding: 14px 35px;
+
+        @include desktop {
+            padding: 10px 25px;
+        }
+    }
+}

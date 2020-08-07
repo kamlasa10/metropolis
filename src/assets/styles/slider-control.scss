@@ -1,0 +1,30 @@
+.slider-control {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    &__btn {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        
+        svg {
+            width: 33px;
+            height: 35px;
+            fill: #fff;
+
+            @include tablets {
+                width: 27px;
+                height: 20px;
+            }
+        }
+
+        &--next {
+            transform: rotate(180deg);
+        }
+    }
+}
