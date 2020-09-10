@@ -16,10 +16,19 @@
 
     &__left {
         margin-right: 35px;
+
+        @include small-phone {
+            margin-right: 20px;
+        }
     }
 
     &__socials {
         margin-right: 30px;
+
+        @media (max-width: 826px) {
+            display: none;
+            margin-right: 0;
+        }
 
         &-link {
             display: inline-flex;
@@ -46,10 +55,24 @@
         }
     }
 
+    &__btn {
+        @media (max-width: 720px) {
+            display: none;
+        }
+    }
+
     &__phone {
         margin-right: 30px;
         display: flex;
         align-items: center;
+
+        @include tablets {
+            margin-right: 15px;
+        }
+
+        @media (max-width: 568px) {
+            margin-right: 0;
+        }
 
         &-icon {
             display: flex;
@@ -60,6 +83,14 @@
             margin-right: 18px;
             background-color: $textColor;
             border-radius: 50%;
+
+            @include tablets {
+                margin-right: 12px;
+            }
+
+            @media (max-width: 568px) {
+                margin-right: 0;
+            }
 
             svg {
                 width: 9px;
@@ -73,6 +104,14 @@
             line-height: 0.9em;
             text-transform: uppercase;
             color: $textColor;
+
+            @media (max-width: 857px) {
+                font-size: 14px;
+            }
+
+            @media (max-width: 568px) {
+                display: none;
+            }
         }
     }
 

@@ -12,6 +12,7 @@
         align-items: center;
         justify-content: center;
         display: none;
+        z-index: 5;
         cursor: pointer;
         transition: all 0.9s;
 
@@ -27,6 +28,16 @@
             top: -30px;
             left: 0;
             display: block;
+        }
+
+        @media (max-width: 400px) {
+            width: 50px;
+            height: 50px;
+
+            svg {
+                width: 10px !important;
+                height: 18px !important;
+            }
         }
 
         svg {
@@ -136,6 +147,10 @@
 
     &__list {
         margin-left: 35px;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
 
         @include laptop {
             margin-left: 25px;
@@ -151,6 +166,10 @@
         align-items: center;
         font-size: 18px;
         line-height: 2.5em;
+
+        &-wrap {
+            width: 50px;
+        }
 
         @media (max-width: 870px) {
             font-size: 14px;
@@ -170,14 +189,9 @@
         }
 
         &--1 {
-            svg {
-                width: 19px;
+            img {
+                width: 16px;
                 height: 15px;
-
-                @include desktop {
-                    width: 16px;
-                    height: 13px;
-                }
             }
         }
 
@@ -186,10 +200,6 @@
                 width: 17px;
                 height: 22px;
 
-                @include desktop {
-                    width: 14px;
-                    height: 19px;
-                }
             }
         }
 
@@ -197,29 +207,21 @@
             img {
                 width: 16px;
                 height: 15px;
-                @include desktop {
-                    width: 13px;
-                    height: 13px;
-                }
             }
         }
 
         &--4 {
-            svg {
-                width: 12px;
-                height: 14px;
+            img {
+                width: 16px;
+                height: 12px;
 
-                @include desktop {
-                    width: 10px;
-                    height: 12px;
-                }
             }
         }
 
         &--5 {
-            svg {
+            img {
                 width: 16px;
-                height: 16px;
+                height: 17px;
             }
         }
 
@@ -253,9 +255,30 @@
 
         &--10 {
            svg {
-                width: 13px;
-                height: 11px;
+                width: 15px;
+                height: 13px;
            }
+        }
+
+        &--11 {
+            img {
+                width: 20px;
+                height: 18px;
+            }
+        }
+
+        &--12 {
+            img {
+                width: 18px;
+                height: 20px;
+            }
+        }
+
+        &--13 {
+            img {
+                width: 18px;
+                height: 20px;
+            }
         }
     }
 
@@ -270,8 +293,9 @@
 
     &__title {
         position: absolute;
-        top: 150px;
-        left: 63%;
+        top: 70px;
+        left: 55%;
+        font-size: 55px;
         z-index: 10;
         transform: translateX(-50%);
 
@@ -285,7 +309,12 @@
         }
 
         @include phones {
+            font-size: 35px;
             left: 50%;
+        }
+
+        @media (max-width: 360px) {
+            left: 52%;
         }
     }
 }

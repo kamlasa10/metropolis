@@ -8,29 +8,30 @@ block head
 		link(href="https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet")
 block scripts
 	script(defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM")
+	script(defer src="https://cdn.jsdelivr.net/npm/@marp-team/marpit-svg-polyfill/lib/polyfill.browser.js")
 	script(src='./assets/scripts/index.js')
 block content
-	section(class="section-fixed main")
-		.container
-			.main__wrap
-				.main__left
-					+svg('cg-logo')
-				.main__right
-					.main__right-bg
-					.main__content
-						div(class="socials main__socials")
-							a(href="https://www.facebook.com/metropoliya.kiev.ua/" target="_blank" class="socials__link socials__link--fb")
-								+svg('facebook')
-							a(href="#" class="socials__link socials__link--telegram")
-								+svg('telegram')
-							a(href="#" class="socials__link socials__link--viber")
-								+svg('viber')
-						h3(class="section-title main__title") Мій дім — <br> моя Метрополія
-						p(class="main__desc main__desc--short") Житловий комплекс «Метрополія»- місце, де кожний відчуває себе комфортно та затишно. Ми створили середовище в якому людина стає щасливішою, насолоджуючись духовною рівновагою, піклуючись про фізичний стан, проводячи час з близькими.
-						.main__block
-							a(href="#" class="main__trigger")
-								+svg('mouse')
-	section(class="features section")
+	section(class="section-fixed section-fixed-bg main" id="main")
+		div(class="socials main__socials")
+			a(href="https://www.facebook.com/metropoliya.kiev.ua/" target="_blank" class="socials__link socials__link--fb")
+				+svg('facebook')
+			a(href="https://msng.link/o/?T_anushk=tg" class="socials__link socials__link--telegram")
+				+svg('telegram')
+			a(href="viber://chat?number=%2B380630378995" class="socials__link socials__link--viber")
+				+svg('viber')
+			a(href="https://msng.link/o/?380630378995=vi" class="socials__link socials__link--viber socials__link--viber-phone")
+				+svg('viber')
+		.main__wrap
+			.main__left
+				+svg('cg-logo')
+			.main__right
+				.main__content
+					h3(class="section-title main__title") Мій дім — <br> моя Метрополія
+					p(class="main__desc main__desc--short") Житловий комплекс «Метрополія»- місце, де кожний відчуває себе комфортно та затишно. Ми створили середовище в якому людина стає щасливішою, насолоджуючись духовною рівновагою, піклуючись про фізичний стан, проводячи час з близькими.
+				.main__block
+					a(href="#features" data-anchor="true" class="main__trigger")
+						+svg('mouse')
+	section(class="features section" id="features")
 		.container
 			h3(class="features__heading section-title") Житловий комплекс Метрополія це:
 			.features__wrap
@@ -51,7 +52,7 @@ block content
 						li.features__list-item Енергозберігаюча технологія будівництва
 						li.features__list-item Панорамне скління
 						li.features__list-item Компактне та сучасне планування
-						li.features__list-item Швидкістні ліфти
+						li(class="features__list-item") Швидкістні ліфти
 				div(class="features__item features__item--3")
 					.features__img
 						+img('features-img3.svg')
@@ -70,14 +71,13 @@ block content
 						li.features__list-item Власний парк відпочинку у дворі
 						li.features__list-item Авторський дизайн місць загального користування
 						li.features__list-item Оригінальна архітектура
-	section(class="section-fixed gallery")
+	section(class="section-fixed section-fixed-bg gallery" id="gallery")
 		h3(class="section-title gallery__title") Галерея
 		.gallery__content
-			.slider-control
-				button(class="slider-control__btn slider-control__btn--prev")
-					+svg('left-arrow')
-				button(class="slider-control__btn slider-control__btn--next")
-					+svg('left-arrow')
+			button(class="slider-control__btn slider-control__btn--prev")
+				+svg('left-arrow')
+			button(class="slider-control__btn slider-control__btn--next")
+				+svg('left-arrow')
 			.gallery__wrap
 				.gallery__item
 					+img('gallery-img.jpg')
@@ -91,7 +91,45 @@ block content
 					+img('gallery-img5.jpg')
 				.gallery__item
 					+img('gallery-img6.jpg')
-	section(class="section technical")
+				.gallery__item
+					+img('gallery-img7.jpg')
+				.gallery__item
+					+img('gallery-img9.jpg')
+				.gallery__item
+					+img('gallery-img10.jpg')
+				.gallery__item
+					+img('gallery-img11.jpg')
+				.gallery__item
+					+img('gallery-img12.jpg')
+				.gallery__item
+					+img('gallery-img13.jpg')
+				.gallery__item
+					+img('gallery-img14.jpg')
+				.gallery__item
+					+img('plan.jpg')
+				.gallery__item
+					+img('gallery-img16.jpg')
+				.gallery__item
+					+img('gallery-img17.jpg')
+				.gallery__item
+					+img('gallery-img18.jpg')
+				.gallery__item
+					+img('gallery-img19.jpg')
+				.gallery__item
+					+img('gallery-img20.png')
+				.gallery__item
+					+img('gallery-img21.png')
+				.gallery__item
+					+img('gallery-img22.png')
+				.gallery__item
+					+img('gallery-img23.png')
+				.gallery__item
+					+img('gallery-img24.png')
+				.gallery__item
+					+img('gallery-img25.png')
+				.gallery__item
+					+img('gallery-img26.png')
+	section(class="section technical" id="technical")
 		.container
 			.technical__content
 				h3(class="section-title technical__heading") Технічні характеристики
@@ -120,7 +158,7 @@ block content
 						+img('cli/Auto.svg')
 						.technical__wrap
 							.technical__title Паркінг
-							.technical__text Наземний
+							.technical__text Підземний дворівневий
 					div(class="technical__item technical__item--6")
 						+img('cli/trowel.svg')
 						.technical__wrap
@@ -156,9 +194,9 @@ block content
 						.technical__wrap
 							.technical__title Дах
 							.technical__text Сучасні рулонні матеріали, встановлені водостічні воронки
-	section(class="section plan")
+	section(class="section plan" id="plan")
 		h3(class="section-title plan__title") Генплан
-	section(class="section-fixed view")
+	section(class="section-fixed section-fixed-bg view" id="view")
 		.container
 			.view__inner-wrap
 				.view__top-wrap
@@ -171,288 +209,108 @@ block content
 						+svg('left-arrow')
 					.view__slider
 						.view__item
-							.view__img
-								+img('1floor-img.png')
-							.view__content
-								.view__title 1 кімнатна 41.02 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
+							div(class="view__img" data-view-img="./assets/images/floor-img-view.png")
 								+img('1floor-img2.png')
 							.view__content
-								.view__title 1 кімнатна 33.7 м<sup>2</sup>
+								.view__title 1 кімнатна 33.61 м<sup>2</sup>
 								.view__block
-									a(href="./assets/images/1floor-img2-full.png" download class="view__link")
+									a(href="./static/1floor-img2-pdf.pdf" download class="view__link")
 										span.view__link-icon
 											+svg('pdf')
 										span.view__block-text PDF
 						.view__item
-							.view__img
-								+img('1floor-img3.png')
-							.view__content
-								.view__title 1 кімнатна 47.57 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img3-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img4.png')
-							.view__content
-								.view__title 1 кімнатна 39.20 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img4-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img5.png')
-							.view__content
-								.view__title 1 кімнатна 38.20 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img5-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img6.png')
-							.view__content
-								.view__title 1 кімнатна 36.23 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img6-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img7.png')
-							.view__content
-								.view__title 1 кімнатна 39.20 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img7-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img8.png')
-							.view__content
-								.view__title 1 кімнатна 35.47 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img8-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img9.png')
-							.view__content
-								.view__title 1 кімнатна 36.23 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img9-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img10.png')
-							.view__content
-								.view__title 1 кімнатна 35.47 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img10-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img11.png')
-							.view__content
-								.view__title 1 кімнатна 35.61 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img11-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img12.png')
-							.view__content
-								.view__title 1 кімнатна 47.57 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img12-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img13.png')
-							.view__content
-								.view__title 1 кімнатна 39.20 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img13-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img14.png')
-							.view__content
-								.view__title 1 кімнатна 38.25 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img14-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img15.png')
-							.view__content
-								.view__title 1 кімнатна 33.7 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img15-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img16.png')
-							.view__content
-								.view__title 1 кімнатна 41.02 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img16-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img17.png')
-							.view__content
-								.view__title 1 кімнатна 45.55 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img17-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img18.png')
-							.view__content
-								.view__title 1 кімнатна 45.55 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img18-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('1floor-img19.png')
-							.view__content
-								.view__title 1 кімнатна 36.96 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/1floor-img19-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('2floor-img.png')
-							.view__content
-								.view__title 2 кімнатна 48.76 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/2floor-img-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
+							div(class="view__img" data-view-img="./assets/images/floor-img-view10.png")
 								+img('2floor-img2.png')
 							.view__content
-								.view__title 2 кімнатна 64.91 м<sup>2</sup>
+								.view__title 1 кімнатна 52.72 м<sup>2</sup>
 								.view__block
-									a(href="./assets/images/2floor-img2-full.png" download class="view__link")
+									a(href="./static/2floor-img2-pdf.pdf" download class="view__link")
 										span.view__link-icon
 											+svg('pdf')
 										span.view__block-text PDF
 						.view__item
-							.view__img
+							div(class="view__img" data-view-img="./assets/images/floor-img-view9.png")
+								+img('2floor-img.png')
+							.view__content
+								.view__title 1 кімнатна 48.64 м<sup>2</sup>
+								.view__block
+									a(href="./static/2floor-img-pdf.pdf" download class="view__link")
+										span.view__link-icon
+											+svg('pdf')
+										span.view__block-text PDF
+						.view__item
+							div(class="view__img" data-view-img="./assets/images/floor-img-view.png")
+								+img('1floor-img.png')
+							.view__content
+								.view__title 1 кімнатна 40.90 м<sup>2</sup>
+								.view__block
+									a(href="./static/1floor-img-pdf.pdf" download class="view__link")
+										span.view__link-icon
+											+svg('pdf')
+										span.view__block-text PDF
+						.view__item
+							div(class="view__img" data-view-img="./assets/images/floor-img-view4.png")
+								+img('1floor-img4.png')
+							.view__content
+								.view__title 1 кімнатна 39.56 м<sup>2</sup>
+								.view__block
+									a(href="./static/1floor-img4-pdf.pdf" download class="view__link")
+										span.view__link-icon
+											+svg('pdf')
+										span.view__block-text PDF
+						.view__item
+							div(class="view__img" data-view-img="./assets/images/floor-img-view5.png")
+								+img('1floor-img5.png')
+							.view__content
+								.view__title 1 кімнатна 36.25 м<sup>2</sup>
+								.view__block
+									a(href="./static/1floor-img5-pdf.pdf" download class="view__link")
+										span.view__link-icon
+											+svg('pdf')
+										span.view__block-text PDF
+						.view__item
+							div(class="view__img" data-view-img="./assets/images/floor-img-view6.png")
+								+img('1floor-img6.png')
+							.view__content
+								.view__title 1 кімнатна 39.56 м<sup>2</sup>
+								.view__block
+									a(href="./static/1floor-img6-pdf.pdf" download class="view__link")
+										span.view__link-icon
+											+svg('pdf')
+										span.view__block-text PDF
+						.view__item
+							div(class="view__img" data-view-img="./assets/images/floor-img-view7.png")
+								+img('1floor-img7.png')
+							.view__content
+								.view__title 1 кімнатна 31.61 м<sup>2</sup>
+								.view__block
+									a(href="./static/1floor-img7-pdf.pdf" download class="view__link")
+										span.view__link-icon
+											+svg('pdf')
+										span.view__block-text PDF
+						.view__item
+							div(class="view__img" data-view-img="./assets/images/floor-img-view11.png")
 								+img('2floor-img3.png')
 							.view__content
-								.view__title 2 кімнатна 53.82 м<sup>2</sup>
+								.view__title 1 кімнатна 52.60 м<sup>2</sup>
 								.view__block
-									a(href="./assets/images/2floor-img3-full.png" download class="view__link")
+									a(href="./static/2floor-img3-pdf.pdf" download class="view__link")
 										span.view__link-icon
 											+svg('pdf')
 										span.view__block-text PDF
 						.view__item
-							.view__img
+							div(class="view__img" data-view-img="./assets/images/floor-img-view12.png")
 								+img('2floor-img4.png')
 							.view__content
-								.view__title 2 кімнатна 52.6 м<sup>2</sup>
+								.view__title 1 кімнатна 52.72 м<sup>2</sup>
 								.view__block
-									a(href="./assets/images/2floor-img4-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('2floor-img5.png')
-							.view__content
-								.view__title 2 кімнатна 64.12 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/2floor-img5-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('2floor-img6.png')
-							.view__content
-								.view__title 2 кімнатна 53.82 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/2floor-img6-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('2floor-img7.png')
-							.view__content
-								.view__title 2 кімнатна 64.79 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/2floor-img7-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('2floor-img8.png')
-							.view__content
-								.view__title 2 кімнатна 64.25 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/2floor-img8-full.png" download class="view__link")
-										span.view__link-icon
-											+svg('pdf')
-										span.view__block-text PDF
-						.view__item
-							.view__img
-								+img('2floor-img9.png')
-							.view__content
-								.view__title 2 кімнатна 52.60 м<sup>2</sup>
-								.view__block
-									a(href="./assets/images/2floor-img9-full.png" download class="view__link")
+									a(href="./static/2floor-img4-pdf.pdf" download class="view__link")
 										span.view__link-icon
 											+svg('pdf')
 										span.view__block-text PDF
 					button(type="button" class="slider-control__btn view__btn--next")
 						+svg('left-arrow')
-	section(class="section ready")
+	section(class="section ready" id="ready")
 		.container
 			.ready__content
 				h3(class="section-title ready__heading") Квартири з ремонтом
@@ -461,39 +319,37 @@ block content
 						+img('cli/Repair.svg')
 						.ready__block
 							.ready__title Ремонт під ключ —
-							.ready__text заощаджуй
+							.ready__text заощаджуй. 
 					div(class="ready__item ready__item--2")
 						+img('cli/Okay.svg')
 						.ready__block
 							.ready__title Ціна відома заздалегідь
-							.ready__text ціна ремонту фіксована і не змінюється в процесі роботи
+							.ready__text Ціна ремонту фіксована і не змінюється в процесі роботи
 					div(class="ready__item ready__item--3")
 						+img('cli/Sofa.svg')
 						.ready__block
-							.ready__title Ремонт під ключ —
-							.ready__text заощаджуй
+							.ready__title Все включено
+							.ready__text У вартість входять усі ремонтні роботи, матеріали, меблі, документація, управління і найголовніше контроль і гарантія
 					div(class="ready__item ready__item--4")
 						+img('cli/qualification.svg')
 						.ready__block
 							.ready__title Гарантія якості
-							.ready__text якщо виникають якісь проблеми, ми приїжджаємо і безкоштовно їх виправляємо, гарантія ремонту
+							.ready__text Якщо виникають якісь проблеми, ми приїжджаємо і безкоштовно їх виправляємо, гарантія ремонту
 					div(class="ready__item ready__item--5")
 						+img('cli/Time.svg')
 						.ready__block
 							.ready__title Дбаємо про Ваш час —
-							.ready__text сповіщаємо про етапи виконання ремонтних робіт
-					div(class="ready__item ready__item--6")
-						div(class="ready__block")
-							.ready__text 6 328 <span>грн м2</span> 
-	section(class="section-fixed camera")
+							.ready__text Сповіщаємо про етапи виконання ремонтних робіт
+	section(class="section-fixed section-fixed-bg camera" id="camera")
 		.camera__content
+			.camera__wrap
 			.camera__wrap
 				h3(class="section-title camera__title") Веб камера
 				.camera__img
-					+img('camera-img.jpg')
+					+img('camera-img.png')
 					button(class="play-btn" type="button")
 						+svg('play')
-	section(class="Infrastructure section")
+	section(class="Infrastructure section" id="Infrastructure")
 		.Infrastructure__wrap
 			button(class="Infrastructure__btn")
 				+svg('arrow')
@@ -503,48 +359,70 @@ block content
 					.Infrastructure__intro Метрополія
 				.Infrastructure__list
 					div(class="Infrastructure__item Infrastructure__item--1")
-						+svg('Student')
-						span Вищі навчальні заклади
+						.Infrastructure__item-wrap
+							+img('cli/market.svg')
+						span Продуктовий ринок
 					div(class="Infrastructure__item Infrastructure__item--2")
-						+svg('ion-ios-restaurant')
+						.Infrastructure__item-wrap
+							+svg('ion-ios-restaurant')
 						span Кафе, ресторани
 					div(class="Infrastructure__item Infrastructure__item--3")
-						+img('cli/Union.svg')
+						.Infrastructure__item-wrap
+							+img('cli/Union.svg')
 						span Школи
 					div(class="Infrastructure__item Infrastructure__item--4")
-						+svg('dantist')
-						span Стоматологія
+						.Infrastructure__item-wrap
+							+img('cli/post.svg')
+						span Пошта
 					div(class="Infrastructure__item Infrastructure__item--5")
-						+svg('Pharmacy')
-						span Аптеки
+						.Infrastructure__item-wrap
+							+img('cli/veterenary.svg')
+						span Ветеренарна лікарня
 					div(class="Infrastructure__item Infrastructure__item--6")
-						+svg('entypo-shopping-cart')
+						.Infrastructure__item-wrap
+							+svg('entypo-shopping-cart')
 						span Супермаркети
 					div(class="Infrastructure__item Infrastructure__item--7")
-						+svg('supermarket-bag')
+						.Infrastructure__item-wrap
+							+svg('supermarket-bag')
 						span Торгові центри
 					div(class="Infrastructure__item Infrastructure__item--8")
-						+svg('bank')
+						.Infrastructure__item-wrap
+							+svg('bank')
 						span Банки
 					div(class="Infrastructure__item Infrastructure__item--9")
-						+svg('tree')
+						.Infrastructure__item-wrap
+							+svg('tree')
 						span Парки
 					div(class="Infrastructure__item Infrastructure__item--10")
-						+svg('Metro')
-						span Метро			
+						.Infrastructure__item-wrap
+							+svg('Metro')
+						span Метро
+					div(class="Infrastructure__item Infrastructure__item--11")
+						.Infrastructure__item-wrap
+							+img('cli/hypermarker.svg')
+						span Гипермаркет
+					div(class="Infrastructure__item Infrastructure__item--12")
+						.Infrastructure__item-wrap
+							+img('cli/Kindergarten.svg')
+						span Дитячий садочок
+					div(class="Infrastructure__item Infrastructure__item--13")
+						.Infrastructure__item-wrap
+							+img('cli/saloon.svg')
+						span Салон краси
 		.Infrastructure__map
 		h3(class="section-title Infrastructure__title") Інфраструктура
-	section(class="section-fixed about")
+	section(class="section-fixed section-fixed-bg about" id="about")
 		.container
 			.about__content
 				h3(class="section-title about__heading") Забудовник
 				.about__wrap
 					.about__left
-						.about__title CG concept group —
-						.about__desc девелоперська група компаній, що створена в 2010 році. За цей час успішно реалізувала багато об’єктів різного рівня складності, починаючи зі створення концепції до якісного управління власнозбудованих проектів. Персональна відповідальність за кожний побудований квадратний метр- головна позиція компанії
+						.about__title CG concept group -
+						.about__desc Девелоперська група компаній, що створена в 2010 році. За цей час успішно реалізувала багато об’єктів різного рівня складності, починаючи зі створення концепції до якісного управління власнозбудованих проектів. Персональна відповідальність за кожний побудований квадратний метр- головна позиція компанії.
 					.about__right
 						+svg('cg-logo')
-	section(class="paper section")
+	section(class="paper section" id="paper")
 		.container
 			.paper__content
 				h3(class="section-title paper__title") Документи
@@ -553,50 +431,58 @@ block content
 						+svg('left-arrow')
 					.paper__slider
 						.paper__item
-							a(href="#" class="paper__link")
-								+svg('pdf')
-							.paper__text Дозвіл на будівельні роботи
-							.paper__icon
-								+svg('M-logo')
+							.paper__item-wrap
+								a.paper__link(href='./static/work-permit.pdf' target='_blank')
+									svg.icon--pdf(role='presentation')
+										use(xlink:href='#icon-pdf')
+								.paper__text
+									img.paper__img(src='assets/images/doc.png' alt='photo')
+								.paper__icon
+									svg.icon--M-logo(role='presentation')
+										use(xlink:href='#icon-M-logo')
 						.paper__item
-							a(href="#" class="paper__link")
-								+svg('pdf')
-							.paper__text Документ по земельній ділянці
-							.paper__icon
-								+svg('M-logo')
+							.paper__item-wrap
+								a.paper__link(href='./static/resolution.pdf' target='_blank')
+									svg.icon--pdf(role='presentation')
+										use(xlink:href='#icon-pdf')
+								.paper__text
+									img.paper__img(src='assets/images/doc2.png' alt='photo')
+								.paper__icon
+									svg.icon--M-logo(role='presentation')
+										use(xlink:href='#icon-M-logo')
 						.paper__item
-							a(href="#" class="paper__link")
-								+svg('pdf')
-							.paper__text Сертифікат про готовніть до експлуатації
-							.paper__icon
-								+svg('M-logo')
+							.paper__item-wrap
+								a.paper__link(href='./static/Document-on-land-dilyantsi.pdf' target='_blank')
+									svg.icon--pdf(role='presentation')
+										use(xlink:href='#icon-pdf')
+								.paper__text
+									img.paper__img(src='assets/images/doc3.png' alt='photo')
+								.paper__icon
+									svg.icon--M-logo(role='presentation')
+										use(xlink:href='#icon-M-logo')
 						.paper__item
-							a(href="#" class="paper__link")
-								+svg('pdf')
-							.paper__text Дозвіл на будівельні роботи
-							.paper__icon
-								+svg('M-logo')
+							.paper__item-wrap
+								a.paper__link(href='./static/mind-and-interconnection-for-the-project.pdf' target='_blank')
+									svg.icon--pdf(role='presentation')
+										use(xlink:href='#icon-pdf')
+								.paper__text
+									img.paper__img(src='assets/images/doc4.png' alt='photo')
+								.paper__icon
+									svg.icon--M-logo(role='presentation')
+										use(xlink:href='#icon-M-logo')
 						.paper__item
-							a(href="#" class="paper__link")
-								+svg('pdf')
-							.paper__text Дозвіл на будівельні роботи
-							.paper__icon
-								+svg('M-logo')
-						.paper__item
-							a(href="#" class="paper__link")
-								+svg('pdf')
-							.paper__text Дозвіл на будівельні роботи
-							.paper__icon
-								+svg('M-logo')
-						.paper__item
-							a(href="#" class="paper__link")
-								+svg('pdf')
-							.paper__text Дозвіл на будівельні роботи
-							.paper__icon
-								+svg('M-logo')
+							.paper__item-wrap
+								a.paper__link(href='static/build.pdf' target='_blank')
+									svg.icon--pdf(role='presentation')
+										use(xlink:href='#icon-pdf')
+								.paper__text
+									img.paper__img(src='assets/images/doc5.png' alt='photo')
+								.paper__icon
+									svg.icon--M-logo(role='presentation')
+										use(xlink:href='#icon-M-logo')
 					button(class="slider-control__btn paper__btn--next")
 						+svg('left-arrow')
-	section(class="section-fixed contacts")
+	section(class="section-fixed section-fixed-bg  contacts" id="contacts")
 		footer.footer
 			include ../includes/footer.pug
 		.container
@@ -614,7 +500,7 @@ block content
 									.contacts__info-block
 										div(class="contacts__info-icon contacts__info-icon--phone")
 											+svg('phone')
-										a(href="tel:+380444928455" class="contacts__info-text") +38 (044) 492-84-55
+										a(href="tel:+380444928455" class="contacts__info-text") +38 (044) 49-28-455
 							.contacts__info-item
 								.contacts__info-title Графік роботи відділу продажу:
 								.contacts__info-wrap
@@ -622,21 +508,24 @@ block content
 										div(class="contacts__info-icon contacts__info-icon--date")
 											+svg('Date')
 										.contacts__info-text Пн-Пт: 10:00 - 19:00 <br> Сб: 11:00 - 16:00 <br> Нд: по запису
-						form(action="#" method="post" class="contacts__form")
+						form(action="#" method="post" class="contacts__form" data-popup="true" data-form="contacts")
 							.contacts__form-title У вас виникли запитання?  Напишіть нам!
-							.contacts__form-item
-								div(class="contacts__form-icon contacts__form-icon--user")
-									+svg('user')
-								input(type="text" placeholder="Ім’я:" class="contacts__form-input")
-							.contacts__form-item
-								div(class="contacts__form-icon contacts__form-icon--phone")
-									+svg('phone')
-								input(type="text" placeholder="Телефон:" class="contacts__form-input")
-							.contacts__form-item
-								div(class="contacts__form-icon contacts__form-icon--message")
-									+svg('Message')
-								textarea(type="text" placeholder="Повідомлення:" class="contacts__form-input contacts__form-area")
-							button(class="btn submit__btn contacts__btn") Надіслати повідомлення
+							div(class="contacts__form-item popup__block")
+								.contacts__form-item-wrap
+									div(class="contacts__form-icon contacts__form-icon--user")
+										+svg('user')
+									input(type="text" placeholder="Ім’я:" class="popup__input contacts__form-input")
+							div(class="contacts__form-item popup__block")
+								.contacts__form-item-wrap
+									div(class="contacts__form-icon contacts__form-icon--phone")
+										+svg('phone')
+									input(type="text" placeholder="Телефон:" name="phone" class="popup__input contacts__form-input")
+							div(class="contacts__form-item popup__block")
+								.contacts__form-item-wrap
+									div(class="contacts__form-icon contacts__form-icon--message")
+										+svg('Message')
+									textarea(type="text" placeholder="Повідомлення:" class="popup__input contacts__form-input contacts__form-area")
+							button(class="btn submit__form contacts__btn") Надіслати повідомлення
 block header
 	header.header
 		include ../includes/header.pug

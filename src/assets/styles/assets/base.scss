@@ -14,10 +14,16 @@
 	@include debug(rgba(0, 0, 0, .5), 1px solid #ff0);
 }
 
+svg { max-height: 100%; }
+
 .container {
 	@include wrapper();
 }
 
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {overflow-x:hidden;}
 
 html{
 	font-size: 14px;
@@ -27,6 +33,9 @@ html{
 	@include to(576px){
 		font-size: 8.5px;
 	}
+
+	overflow-x: hidden;
+	max-width: 100vw;
 }
 body {
 	position: relative;
@@ -35,10 +44,12 @@ body {
 	font-family: $openSans;
 	font-size: 18px;
 	line-height: 1.6em;
-	overflow-x: hidden;
 	color: $grey;
 	background: #fff;
-	background-size: contain;
+	width: 100%;
+	background-size: cover;
+	overflow: hidden;
+	overflow-y: auto;
 
 	@include desktop {
 		font-size: 14px;

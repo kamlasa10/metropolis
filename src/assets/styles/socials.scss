@@ -54,6 +54,11 @@
         }
 
         &--viber {
+
+            @include tablets {
+                display: none;
+            }
+
             svg {
                 width: 23px;
                 height: 25px;
@@ -61,6 +66,14 @@
                 @media (max-width: 670px) {
                     width: 17px;
                     height: 19px;
+                }
+            }
+
+            &-phone {
+                display: none;
+
+                @include tablets {
+                    display: flex;
                 }
             }
         }
@@ -73,7 +86,7 @@
             opacity: 0.8;
         }
 
-        &:actvie {
+        &:active {
             opacity: 0.6;
         }
     }

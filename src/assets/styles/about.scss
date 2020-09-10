@@ -87,7 +87,7 @@
                 height: 112px;
             }
 
-            @include phones {
+            @media (max-width: 330px) {
                 width: 115px;
                 height: 57px;
             }

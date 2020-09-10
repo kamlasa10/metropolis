@@ -34,7 +34,11 @@
 
     &__slider {
         display: flex;
-        width: 89%;
+        width: 90%;
+
+        @include laptop {
+            transform: translateX(-20px);
+        }
 
         .slick-list {
             padding-top: 30px;
@@ -43,30 +47,68 @@
 
         .slick-slide {
             display: flex;
-            margin-right: 80px;
+        }
 
-            @media (max-width: 1300px) {
-                margin-right: 50px;
-            }
-
-            @include phones {
-                margin-right: 20px;
-            }
-
+        @media (max-width: 380px) {
+            width: 83%;
+            margin-right: 17px;
+            transform: translateX(-28px);
         }
     }
 
     &__item {
-        min-height: 425px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-        border: 1px solid rgba(203, 211, 224, 0.4);
+        cursor: pointer;
+        outline: none;
+
+        a {
+            outline: none;
+
+            &:active {
+                outline: none;
+            }
+        }
+
+        &-wrap {
+            min-height: 425px;
+            width: 100%;
+            margin: 0 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            border: 1px solid rgba(203, 211, 224, 0.4);
+            transition: all 0.4s;
+
+            &:hover {
+                border-color: #fff;
+
+                .paper__link {
+                    transition: all 0.4s;
+                    background-color: #fff;
+
+                    svg {
+                        transition: all 0.4s;
+                        fill: #000;
+                    }
+                }
+            }
+
+            @include phones {
+                min-height: inherit;
+                margin: 0 25px;
+            }
+
+            @include small-phone {
+                margin: 0 30px;
+                transform: translateX(-15px);
+            }
+        }
+
     }
 
     &__link {
+        transition: all 0.4s;
         transform: translateY(-30px);
         width: 59px;
         height: 59px; 
@@ -83,6 +125,7 @@
         }
 
         svg {
+            transition: all 0.4s;
             width: 21px;
             height: 21px;
             fill: #CBD3E0;
@@ -95,17 +138,30 @@
     }
 
     &__text {
+        margin-bottom: 20px;
         margin-top: 60px;
         position: relative;
-        padding: 0 70px;
-        padding-left: 30px;
+        padding: 0 30px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 200px;
+        }
 
         @include laptop {
             padding: 0 30px;
         }
 
         @include tablets {
-            padding-right: 15px;
+            padding: 0 15px;
+        }
+
+        @include phones {
+            margin-top: 30px;
+            padding: 0;
         }
 
         &::before {
@@ -116,6 +172,10 @@
             width: 32px;
             height: 1px;
             background-color: #CAC4CD;
+
+            @include tablets {
+                display: none;
+            }
         }
     }
 
@@ -132,31 +192,32 @@
                 width: 130px;
                 height: 71px;
             }
+
+            @include phones {
+                width: 110px;
+                height: 60px;
+            }
         }
     }
 
     &__btn {
-        &--prev {
-            margin-right: 80px;
-
-            @media (max-width: 1300px) {
-                margin-right: 35px;
-            }
-
-            @include laptop {
-                margin-right: 10px;
-            }
-
-            @include phones {
-                margin-right: 0;
-            }
-        }
-
         &--next {
             transform: rotate(180deg);
 
             @include laptop {
                 transform: rotate(180deg) translateX(20px);
+            }
+
+            @include phones {
+                transform: rotate(180deg) translateX(32px);
+            }
+
+            @media (max-width: 380px) {
+                transform: rotate(180deg) translateX(66px);
+            }
+
+            @include small-phone {
+                transform: rotate(180deg) translateX(60px);
             }
         }
     }

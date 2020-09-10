@@ -53,6 +53,12 @@ $fields_ss: 10px;
         padding-left: 30px;
         padding-right: 30px;
     }
+
+    @include phones {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     margin: 0 auto;
 }
 

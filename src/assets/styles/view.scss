@@ -85,6 +85,10 @@
         @include phones {
             top: 36%;
         }
+
+        @include small-phone {
+            margin-right: 20px;
+        }
     }
 
     .view__wrap {
@@ -110,10 +114,10 @@
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
         border: 1px solid rgba(203, 211, 224, 0.4);
         transition: all 0.4s;
-        margin-right: 80px;
+        margin-right: 60px;
 
         @media (max-width: 1200px) {
-            margin-right: 60px;
+            margin-right: 50px;
         }
 
         @include laptop {
@@ -132,10 +136,12 @@
             border-color: #fff;
 
             .view__link-icon {
+                transition: all 0.4s;
                 background-color: #fff;
                 border-color: transparent;
 
                 svg {
+                    transition: all 0.4s;
                     fill: #000;
                 }
             }
@@ -205,6 +211,7 @@
         }
 
         &-icon {
+            transition: all 0.4s;
             width: 40px;
             height: 40px;
             display: inline-flex;
@@ -219,6 +226,7 @@
                 height: 30px;
 
                 svg {
+                    transition: all 0.4s;
                     width: 13px;
                     height: 13px;
                 }

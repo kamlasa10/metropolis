@@ -2,44 +2,48 @@
 	.header__wrap
 		.header__left
 			div(class="header__logo logo")
-				.logo__block
+				a(href="#main" class="logo__block" data-anchor="true")
 					+svg('M-logo')
 				.logo__block метрополія
 		.header__right
 			.header__socials
-				a(href="https://www.facebook.com/metropoliya.kiev.ua/" target="_blank" class="header__socials-link") Intagram
+				a(href="https://www.instagram.com/jkmetropoliya/?igshid=1fohqhutdbu92" target="_blank" class="header__socials-link") Instagram
 				a(href="https://www.facebook.com/metropoliya.kiev.ua/" target="_blank" class="header__socials-link") facebook
 			.header__phone
-				.header__phone-icon
+				a(href="tel:+380444928440" class="header__phone-icon")
 					+svg('phone')
-				a(href="tel:+380444928440" class="header__phone-number") +38 (044) 49-28-440
+				a(href="tel:+380444928445" class="header__phone-number") +38 (044) 49-28-455
 			button(class="modal-link btn header__btn") Зворотній зв’язок
+			.burger
+				span Menu
+				button(class="burger-btn")
+				
 nav(class="header__navbar navbar")
 	.container
+		button(class="burger-close")
+			+svg('cross')
 		ul.navbar__list
 			li.navbar__item
-				a(href="#" class="navbar__link navbar__link--active") Переваги                                                                 
+				a(href="#features" data-anchor="true" class="navbar__link navbar__link--active") Переваги
 			li.navbar__item
-				a(href="#" class="navbar__link") Галерея
+				a(href="#gallery" data-anchor="true" class="navbar__link") Галерея
 			li.navbar__item
-				a(href="#" class="navbar__link") Галерея
+				a(href="#technical" data-anchor="true" class="navbar__link") Тех. характеристики
 			li.navbar__item
-				a(href="#" class="navbar__link") Інфраструктура
+				a(href="#plan" data-anchor="true" class="navbar__link") Генплан
 			li.navbar__item
-				a(href="#" class="navbar__link") Тех. характеристики
+				a(href="#view" data-anchor="true" class="navbar__link") Планування
 			li.navbar__item
-				a(href="#" class="navbar__link") Генплан
+				a(href="#ready" data-anchor="true" class="navbar__link") Квартири з ремонтом
 			li.navbar__item
-				a(href="#" class="navbar__link") Планування
+				a(href="#camera" data-anchor="true" class="navbar__link") Веб камера
 			li.navbar__item
-				a(href="#" class="navbar__link") Квартири з ремонтом
+				a(href="#Infrastructure" data-anchor="true" class="navbar__link") Інфраструктура
 			li.navbar__item
-				a(href="#" class="navbar__link") Веб камера 
+				a(href="#about" data-anchor="true" class="navbar__link") Забудовник
 			li.navbar__item
-				a(href="#" class="navbar__link") Забудовник
+				a(href="#paper" data-anchor="true" class="navbar__link") Документи
 			li.navbar__item
-				a(href="#" class="navbar__link") Документи
-			li.navbar__item
-				a(href="#" class="navbar__link") Контакти
+				a(href="#contacts" data-anchor="true" class="navbar__link") Контакти
 
 	

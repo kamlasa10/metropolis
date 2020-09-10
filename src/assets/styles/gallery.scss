@@ -3,6 +3,10 @@
     flex-direction: column;
     justify-content: center;
 
+    &__content {
+        position: relative;
+    }
+
     .slick-track {
         display: flex;
         align-items: center;
@@ -14,33 +18,49 @@
     }
 
     .slider-control {
-        top: 55%;
         &__btn {
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            z-index: 1;
+
             &--prev {
-                margin-left: 15%;
+                left: 15%;
+
+                @include laptop {
+                    left: 10%;
+                }
+
+                @include tablets {
+                    left: 8%;
+                }
+
+                @include phones {
+                    left: 0;
+                }
             }
 
             &--next {
-                margin-right: 15%;
-                margin-left: auto;
+                right: 15%;
+                top: 45%;
+                transform: rotate(180deg);
+
+                @include laptop {
+                    right: 10%;
+                }
+
+                @include tablets {
+                    right: 8%;
+                }
+
+                @include phones {
+                    right: 0;
+                }
             }
         }
     }
 
-    .slick-slide {
-        position: relative;
-        transform: scale(1, .7);
-        display: flex;
-        flex-direction: column;
-
-        @media (max-width: 1200px) {
-            transform: scale(1, 0.6);
-        }
-
-        @include tablets {
-            transform: scale(1, 0.3);
-        }
-
+    &__item {
         &::before {
             content: "";
             position: absolute;
@@ -52,23 +72,53 @@
             width: 100%;
             background-color: rgba(#000, .5);
         }
+    }
+
+    .slick-slide {
+        position: relative;
+        transform: scale(1, .6);
+        display: flex;
+        flex-direction: column;
+
+        @include tablets {
+            transform: scale(1, 0.2);
+        }
 
         img {
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+
+            @include tablets {
+                object-fit: fill;
+            }
         }
     }
 
     .slick-current {
         z-index: 5;
-        transform: scale(1.2);
+        transform: scale(2);
+        cursor: pointer;
+
+        img {
+            object-fit: contain;
+        }
 
         @media (max-width: 1200px) {
-            transform: scale(1.4);
+            transform: scale(2.3);
+        }
+
+        @include laptop {
+            transform: scale(2);
         }
 
         @include tablets {
             transform: scale(2);
+            height: 500px;
+        }
+
+        @include phones {
+            transform: scale(3);
+            height: 400px;
         }
 
         &::before {
